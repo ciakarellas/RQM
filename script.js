@@ -2,12 +2,12 @@ var tweetLink = "https://twitter.com/intent/tweet?text=";
 var quoteUrl = "http://api.forismatic.com/api/1.0/?method=getQuote&key=867576&format=jsonp&lang=en&jsonp=?";
 
 function getQuote() { 
-  $.getJSON(quoteUrl, createTweet(input)); 
+  $.getJSON(quoteUrl, createTweet); 
 }
 
-function creatTweet(input){
+function createTweet(input){
   // jaka wartość ma przyjąc tu input. Skad sie ona bierze
-  if(!input.quoteAthor.length){
+  if(!input.quoteAuthor.length){
     input.quoteAuthor = "Unknown author";
   }
   var tweetText = "Quote of the day - " + input.quoteText + " Author: " + input.quoteAuthor;
